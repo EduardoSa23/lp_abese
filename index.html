@@ -14,11 +14,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-screen">
-    <header class="relative z-10 bg-[#183154]">
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#183154] shadow-lg">
         <nav class="flex items-center justify-between px-4 py-3 md:px-12">
             <!-- Logo -->
             <div class="flex items-center space-x-2">
-            <img src="./images/icons/logo.svg" alt="Logo abese" class="md:h-6 h-4">
+            <img src="./images/icons/logo.svg" alt="Logo abese" class="md:h-6 h-4" />
             </div>
 
             <!-- Navigation Menu (desktop) -->
@@ -31,25 +31,26 @@
             <!-- Countdown + CTA (desktop) -->
             <div class="hidden md:flex items-center space-x-2">
             <div class="bg-white rounded-lg px-3 py-2 text-[#183154] font-bold text-xl">
-                <span id="days">76</span>
+                <span id="days"></span>
             </div>
             <span class="text-white text-lg font-bold">d</span>
             <div class="bg-white rounded-lg px-3 py-2 text-[#183154] font-bold text-xl">
-                <span id="hours">04</span>
+                <span id="hours"></span>
             </div>
             <span class="text-white text-lg font-bold">h</span>
             <div class="bg-white rounded-lg px-3 py-2 text-[#183154] font-bold text-xl">
-                <span id="minutes">39</span>
+                <span id="minutes"></span>
             </div>
             <span class="text-white text-lg font-bold">m</span>
             <div class="bg-white rounded-lg px-3 py-2 text-[#183154] font-bold text-xl">
-                <span id="seconds">45</span>
+                <span id="seconds"></span>
             </div>
             <span class="text-white text-lg font-bold pr-3">s</span>
 
             <!-- CTA Button -->
-            <a href="#inscricao" class="bg-[#EF7D00] hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors ml-4 text-sm md:text-base">
-                Inscreva-se
+            <a href="#inscricao"
+                class="bg-[#EF7D00] hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors ml-4 text-sm md:text-base">
+                Inscreva-se gratuitamente
             </a>
             </div>
 
@@ -63,25 +64,48 @@
         </nav>
 
         <!-- Mobile Menu (dropdown) -->
-        <div id="mobile-menu" class="hidden flex-col items-center bg-[#183154] text-white py-4 space-y-4 md:hidden">
-            <a href="#hero" class="hover:text-orange-400">Início</a>
-            <a href="#pqParticipar" class="hover:text-orange-400">Programa</a>
-            <a href="#patrocinadores" class="hover:text-orange-400">Patrocinadores</a>
+        <div id="mobile-menu"
+            class="hidden flex flex-col items-center bg-[#183154] text-white py-6 space-y-6 md:hidden transition-all duration-300">
+            <ul class="w-full text-center">
+                <li class="border-b border-t p-4">
+                    <a href="#hero" class="block hover:text-orange-400">Início</a>
+                </li>
+                <li class="border-b p-4">
+                    <a href="#pqParticipar" class="block hover:text-orange-400">Programa</a>
+                </li>
+                <li class="border-b p-4">
+                    <a href="#patrocinadores" class="block hover:text-orange-400">Patrocinadores</a>
+                </li>
+            </ul>
 
             <!-- Timer simplificado no mobile -->
             <div class="flex items-center gap-2">
-            <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-sm"><span id="m-days">76</span>d</div>
-            <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-sm"><span id="m-hours">04</span>h</div>
-            <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-sm"><span id="m-minutes">39</span>m</div>
-            <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-sm"><span id="m-seconds">45</span>s</div>
+                <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-lg">
+                    <span id="m-days"></span>
+                </div>
+                <span class="text-white font-bold">d</span>
+                <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-lg">
+                    <span id="m-hours"></span>
+                </div>
+                <span class="text-white font-bold">h</span>
+                <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-lg">
+                    <span id="m-minutes"></span>
+                </div>
+                <span class="text-white font-bold">m</span>
+                <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-lg">
+                    <span id="m-seconds"></span>
+                </div>
+                <span class="text-white font-bold">m</span>
             </div>
 
             <!-- CTA mobile -->
-            <a href="#inscricao" class="bg-[#EF7D00] hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold">
+            <a href="#inscricao"
+            class="bg-[#EF7D00] hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold">
             Inscreva-se
             </a>
         </div>
     </header>
+
 
     <section id="hero" class="relative flex items-center justify-center px-4 py-12 min-h-[80vh] md:h-[92vh] overflow-hidden">
         <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
@@ -112,7 +136,7 @@
     </section>
 
 
-    <section id="pqParticipar" class="relative z-10 bg-white py-24 px-6">
+    <section id="pqParticipar" class="relative bg-white py-24 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-semibold text-[#183154] mb-6">Por que participar?</h2>
@@ -165,15 +189,15 @@
             <ul class="flex flex-col md:flex-row justify-between mt-16 bg-[#D7D4D8] w-full md:w-[60%] mx-auto px-10 py-4 rounded-full">
                 <li class="flex items-center gap-2">
                     <span class="w-4 h-4 rounded-full bg-[#EF7D00]"></span>
-                    <p class="bg-white/10 text-[#183154] font-semibold">Líder do setor</p>
+                    <p class="text-[#183154] font-semibold">Líder do setor</p>
                 </li>
                 <li class="flex items-center gap-2">
                     <span class="w-4 h-4 rounded-full bg-[#EF7D00]"></span>
-                    <p class="bg-white/10 text-[#183154] font-semibold">Tradição comprovada</p>
+                    <p class="text-[#183154] font-semibold">Tradição comprovada</p>
                 </li>
                 <li class="flex items-center gap-2">
                     <span class="w-4 h-4 rounded-full bg-[#EF7D00]"></span>
-                    <p class="bg-white/10 text-[#183154] font-semibold">Inovação constante</p>
+                    <p class="text-[#183154] font-semibold">Inovação constante</p>
                 </li>
             </ul>
         </div>
@@ -204,122 +228,22 @@
         </div>
     </section>
 
-    <!-- <section id="palestrantes" class="relative z-10 py-12 px-6">
+    <!-- <section id="palestrantes" class="relative py-16 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <div class="flex justify-center mb-8">
-                    <div class="bg-orange-500 rounded-full p-4 w-20 h-20 flex items-center justify-center">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                        </svg>
-                    </div>
-                </div>
-                
-                <h1 class="text-white text-4xl md:text-6xl font-bold mb-6">
-                    Palestrantes Especialistas
-                </h1>
-                
-                <p class="text-white text-lg md:text-xl opacity-90 max-w-3xl mx-auto mb-4">
-                    Conheça os principais líderes e especialistas que compartilharão conhecimento no evento
-                </p>
-                
-                <div class="w-24 h-1 bg-gray-400 mx-auto"></div>
+            <div class="flex justify-center mb-6">
+                <img src="./images/icons/palestrantes.svg" class="w-14 h-14">
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
-                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    
-                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 1</h3>
-                    
-                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
-                    
-                    <p class="text-white text-sm opacity-70">Informações em breve</p>
-                </div>
-                
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
-                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    
-                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 2</h3>
-                    
-                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
-                    
-                    <p class="text-white text-sm opacity-70">Informações em breve</p>
-                </div>
-                
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
-                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    
-                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 3</h3>
-                    
-                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
-                    
-                    <p class="text-white text-sm opacity-70">Informações em breve</p>
-                </div>
-                
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
-                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    
-                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 4</h3>
-                    
-                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
-                    
-                    <p class="text-white text-sm opacity-70">Informações em breve</p>
-                </div>
-                
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
-                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    
-                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 5</h3>
-                    
-                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
-                    
-                    <p class="text-white text-sm opacity-70">Informações em breve</p>
-                </div>
-                
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
-                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    
-                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 6</h3>
-                    
-                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
-                    
-                    <p class="text-white text-sm opacity-70">Informações em breve</p>
-                </div>
+            <h1 class="text-white font-bold text-3xl md:text-5xl">
+                Palestrantes Especialistas
+            </h1>
+            <p class="text-[#E7E9EB] text-lg mt-6 w-full md:w-[50%] mx-auto">
+                Conheça os principais líderes e especialistas que compartilharão conhecimento no evento
+            </p>
+            <div class="w-24 h-1 bg-[#A1A1A1] mx-auto mt-6"></div>
             </div>
-            
-            <div class="text-center mt-16">
-                <p class="text-white text-lg mb-6 opacity-90">
-                    Não perca a oportunidade de aprender com os melhores especialistas do setor
-                </p>
-                <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                    Inscreva-se gratuitamente
-                </button>
-            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"></div>
         </div>
     </section> -->
 
@@ -531,6 +455,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/hero.js"></script>
     <script src="./js/depoimentos.js"></script>
     <script src="./js/inscricao.js"></script>
     <script src="./js/palestrantes.js"></script>

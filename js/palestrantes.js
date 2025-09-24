@@ -1,23 +1,61 @@
 $(document).ready(function() {
-    // Mobile Menu Toggle
-    $("#mobile-menu-btn").click(function() {
-        $("#mobile-menu").removeClass("hidden").addClass("show");
-        $("body").addClass("overflow-hidden");
+     const palestrantes = [
+        {
+        nome: "Palestrante 1",
+        titulo: "Especialista em Segurança",
+        descricao: "Informações em breve",
+        foto: "./images/palestrantes/palestrante1.jpg", // pode usar img em vez de SVG
+        },
+        {
+        nome: "Palestrante 2",
+        titulo: "Especialista em Segurança",
+        descricao: "Informações em breve",
+        foto: "./images/palestrantes/palestrante2.jpg",
+        },
+        {
+        nome: "Palestrante 3",
+        titulo: "Especialista em Segurança",
+        descricao: "Informações em breve",
+        foto: "./images/palestrantes/palestrante3.jpg",
+        },
+        {
+        nome: "Palestrante 4",
+        titulo: "Especialista em Segurança",
+        descricao: "Informações em breve",
+        foto: "./images/palestrantes/palestrante4.jpg",
+        },
+        {
+        nome: "Palestrante 5",
+        titulo: "Especialista em Segurança",
+        descricao: "Informações em breve",
+        foto: "./images/palestrantes/palestrante5.jpg",
+        },
+        {
+        nome: "Palestrante 6",
+        titulo: "Especialista em Segurança",
+        descricao: "Informações em breve",
+        foto: "./images/palestrantes/palestrante6.jpg",
+        },
+    ];
+
+    const $grid = $("#palestrantes .grid");
+
+    // Monta dinamicamente os cards
+    $.each(palestrantes, function (i, p) {
+        const $card = $(`
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
+            <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                <img src="${p.foto}" alt="${p.nome}" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-white text-xl font-bold mb-2">${p.nome}</h3>
+            <p class="text-white text-sm opacity-80 mb-2">${p.titulo}</p>
+            <p class="text-white text-sm opacity-70">${p.descricao}</p>
+        </div>
+        `);
+
+        $grid.append($card);
     });
-    
-    $("#close-mobile-menu").click(function() {
-        $("#mobile-menu").removeClass("show").addClass("hidden");
-        $("body").removeClass("overflow-hidden");
-    });
-    
-    // Close mobile menu when clicking outside
-    $("#mobile-menu").click(function(e) {
-        if (e.target === this) {
-            $(this).removeClass("show").addClass("hidden");
-            $("body").removeClass("overflow-hidden");
-        }
-    });
-    
+
     // Smooth scrolling for anchor links
     $('a[href^="#"]').on('click', function(event) {
         var target = $(this.getAttribute('href'));
