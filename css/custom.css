@@ -2,6 +2,16 @@
     background-image: url('../images/bg-historia.png');
 }
 
+#patrocinadores {
+    background-image: url('../images/bg_patrocinadores.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.card-patrocinador {
+    min-height: 190px;
+}
+
 .bg-gradient-radial {
     background: radial-gradient(circle, var(--tw-gradient-stops));
 }
@@ -55,6 +65,15 @@
     .countdown-item {
         min-width: 40px;
         font-size: 1rem;
+    }
+
+     .card-patrocinador {
+        height: 190px;
+        /* width: 50%; */ /* Remova esta linha */
+        min-width: 0;
+    }
+    .grid-patrocinador {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 

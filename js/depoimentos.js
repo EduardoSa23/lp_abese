@@ -52,38 +52,38 @@ $(document).ready(function () {
     buttonsContainer.append($btn);
   });
 
-//   const buttons = $(".btn-nav");
-//   let currentIndex = 0;
-//   const totalSlides = cards.length;
-//   let autoSlide;
+  // const buttons = $(".btn-nav");
+  // let currentIndex = 0;
+  // const totalSlides = cards.length;
+  // let autoSlide;
 
-//   function goToSlide(index) {
-//     currentIndex = index;
-//     let translateX = -(index * 100);
-//     track.css("transform", "translateX(" + translateX + "%)");
-//     buttons.removeClass("active");
-//     buttons.eq(index).addClass("active");
-//   }
+  // function goToSlide(index) {
+  //   currentIndex = index;
+  //   let translateX = -(index * 100);
+  //   track.css("transform", "translateX(" + translateX + "%)");
+  //   buttons.removeClass("active");
+  //   buttons.eq(index).addClass("active");
+  // }
 
-//   function nextSlide() {
-//     currentIndex = (currentIndex + 1) % totalSlides;
-//     goToSlide(currentIndex);
-//   }
+  // function nextSlide() {
+  //   currentIndex = (currentIndex + 1) % totalSlides;
+  //   goToSlide(currentIndex);
+  // }
 
-//   // autoplay a cada 4 segundos
-//   function startAutoSlide() {
-//     autoSlide = setInterval(nextSlide, 4000);
-//   }
+  // // autoplay a cada 4 segundos
+  // function startAutoSlide() {
+  //   autoSlide = setInterval(nextSlide, 4000);
+  // }
 
-//   function stopAutoSlide() {
-//     clearInterval(autoSlide);
-//   }
+  // function stopAutoSlide() {
+  //   clearInterval(autoSlide);
+  // }
 
-//   buttons.click(function () {
-//     stopAutoSlide();
-//     goToSlide($(this).data("slide"));
-//     startAutoSlide();
-//   });
+  // buttons.click(function () {
+  //   stopAutoSlide();
+  //   goToSlide($(this).data("slide"));
+  //   startAutoSlide();
+  // });
 
-//   startAutoSlide();
+  // startAutoSlide();
 });
