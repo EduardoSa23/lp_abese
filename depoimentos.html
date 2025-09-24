@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel de Depoimentos</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+
+    section.depoimentos {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f0f2f5;
+      overflow: hidden;
+    }
+
+    section.depoimentos h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #1c335f;
+    }
+
+    section.depoimentos p.subtitulo {
+      color: #6c757d;
+      margin-bottom: 40px;
+    }
+
+    .carousel-container {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden; /* esconde o excesso */
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .card {
+      background: #163962;
+      color: white;
+      border-radius: 12px;
+      padding: 30px 20px;
+      min-width: 50%; /* garante 2 por vez */
+      box-sizing: border-box;
+    }
+
+    .card p {
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .card h4 {
+      margin: 5px 0;
+      color: #ff7a00;
+    }
+
+    .card span {
+      font-size: 14px;
+      color: #d1d5db;
+    }
+
+    /* Bolinhas de navegação */
+    .carousel-buttons {
+      margin-top: 20px;
+    }
+
+    .btn-nav {
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      background: #1c335f;
+      opacity: 0.5;
+    }
+
+    .btn-nav.active {
+      background: #ff7a00;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <section class="depoimentos">
+    <h2>Depoimentos</h2>
+    <p class="subtitulo">Veja o que os participantes das edições anteriores têm a dizer sobre a ABESE</p>
+
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <div class="card">
+          <p>“A ABESE é mais que uma associação, é um agente catalisador do desenvolvimento, da inovação e da segurança eletrônica no Brasil.”</p>
+          <img src="andre-prado.jpg" alt="André Prado">
+          <h4>André Prado</h4>
+          <span>CEO - Emive&CO</span>
+        </div>
+
+        <div class="card">
+          <p>“Para o Grupo Invicta, estar na ABESE significa estar conectado com inovação, conhecimento e relacionamento de alto nível.”</p>
+          <img src="felipe-provenzano.jpg" alt="Felipe Provenzano">
+          <h4>Felipe Provenzano</h4>
+          <span>CEO - Grupo Invicta</span>
+        </div>
+
+        <div class="card">
+          <p>“Participar da ABESE nos trouxe novas conexões e abriu portas para projetos inovadores.”</p>
+          <img src="pessoa3.jpg" alt="Maria Silva">
+          <h4>Maria Silva</h4>
+          <span>Diretora - TechSeg</span>
+        </div>
+
+        <div class="card">
+          <p>“O evento é uma oportunidade única de networking e aprendizado no setor de segurança eletrônica.”</p>
+          <img src="pessoa4.jpg" alt="João Santos">
+          <h4>João Santos</h4>
+          <span>CEO - SafeTech</span>
+        </div>
+      </div>
+
+      <div class="carousel-buttons">
+        <span class="btn-nav active" data-slide="0"></span>
+        <span class="btn-nav" data-slide="1"></span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $(document).ready(function() {
+      const track = $(".carousel-track");
+      const buttons = $(".btn-nav");
+      let currentIndex = 0;
+      const totalSlides = buttons.length;
+      let autoSlide;
+
+      function goToSlide(index) {
+        currentIndex = index;
+        let translateX = -(index * 100);
+        track.css("transform", "translateX(" + translateX + "%)");
+        buttons.removeClass("active");
+        buttons.eq(index).addClass("active");
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(currentIndex);
+      }
+
+      // autoplay a cada 4 segundos
+      function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 4000);
+      }
+
+      function stopAutoSlide() {
+        clearInterval(autoSlide);
+      }
+
+      buttons.click(function() {
+        stopAutoSlide();
+        goToSlide($(this).data("slide"));
+        startAutoSlide();
+      });
+
+      startAutoSlide();
+    });
+  </script>
+</body>
+</html>

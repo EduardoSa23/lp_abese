@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestrantes Especialistas - Congresso ABESE 2025</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./css/custom.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-screen">
+    <!-- Header -->
+    <header class="relative z-10">
+        <nav class="flex items-center justify-between px-6 py-4 lg:px-12">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <span class="text-white text-lg font-light tracking-wider">CONGRESSO</span>
+                <span class="text-white text-lg font-bold tracking-wider">ABESE</span>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-white hover:text-orange-400 transition-colors">Início</a>
+                <a href="#" class="text-white hover:text-orange-400 transition-colors">Programa</a>
+                <a href="#" class="text-white hover:text-orange-400 transition-colors">Patrocinadores</a>
+                <a href="palestrantes.html" class="text-orange-400 font-semibold">Palestrantes</a>
+            </div>
+            
+            <!-- CTA Button -->
+            <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                Inscreva-se grátis
+            </button>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <div class="text-center mb-16">
+                <!-- Icon -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-orange-500 rounded-full p-4 w-20 h-20 flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Title -->
+                <h1 class="text-white text-4xl md:text-6xl font-bold mb-6">
+                    Palestrantes Especialistas
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="text-white text-lg md:text-xl opacity-90 max-w-3xl mx-auto mb-4">
+                    Conheça os principais líderes e especialistas que compartilharão conhecimento no evento
+                </p>
+                
+                <!-- Divider -->
+                <div class="w-24 h-1 bg-gray-400 mx-auto"></div>
+            </div>
+            
+            <!-- Speakers Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Speaker 1 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
+                    <!-- Avatar -->
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Name -->
+                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 1</h3>
+                    
+                    <!-- Title -->
+                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
+                    
+                    <!-- Description -->
+                    <p class="text-white text-sm opacity-70">Informações em breve</p>
+                </div>
+                
+                <!-- Speaker 2 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
+                    <!-- Avatar -->
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Name -->
+                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 2</h3>
+                    
+                    <!-- Title -->
+                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
+                    
+                    <!-- Description -->
+                    <p class="text-white text-sm opacity-70">Informações em breve</p>
+                </div>
+                
+                <!-- Speaker 3 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
+                    <!-- Avatar -->
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Name -->
+                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 3</h3>
+                    
+                    <!-- Title -->
+                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
+                    
+                    <!-- Description -->
+                    <p class="text-white text-sm opacity-70">Informações em breve</p>
+                </div>
+                
+                <!-- Speaker 4 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
+                    <!-- Avatar -->
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Name -->
+                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 4</h3>
+                    
+                    <!-- Title -->
+                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
+                    
+                    <!-- Description -->
+                    <p class="text-white text-sm opacity-70">Informações em breve</p>
+                </div>
+                
+                <!-- Speaker 5 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
+                    <!-- Avatar -->
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Name -->
+                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 5</h3>
+                    
+                    <!-- Title -->
+                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
+                    
+                    <!-- Description -->
+                    <p class="text-white text-sm opacity-70">Informações em breve</p>
+                </div>
+                
+                <!-- Speaker 6 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 speaker-card">
+                    <!-- Avatar -->
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Name -->
+                    <h3 class="text-white text-xl font-bold mb-2">Palestrante 6</h3>
+                    
+                    <!-- Title -->
+                    <p class="text-white text-sm opacity-80 mb-2">Especialista em Segurança</p>
+                    
+                    <!-- Description -->
+                    <p class="text-white text-sm opacity-70">Informações em breve</p>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="text-center mt-16">
+                <p class="text-white text-lg mb-6 opacity-90">
+                    Não perca a oportunidade de aprender com os melhores especialistas do setor
+                </p>
+                <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                    Inscreva-se gratuitamente
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-blue-400 to-transparent opacity-5 rounded-full"></div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-blue-900 bg-opacity-95 backdrop-blur-sm z-50 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html" class="text-white text-2xl hover:text-orange-400 transition-colors">Início</a>
+            <a href="#" class="text-white text-2xl hover:text-orange-400 transition-colors">Programa</a>
+            <a href="#" class="text-white text-2xl hover:text-orange-400 transition-colors">Patrocinadores</a>
+            <a href="palestrantes.html" class="text-orange-400 text-2xl font-semibold">Palestrantes</a>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                Inscreva-se grátis
+            </button>
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/palestrantes.js"></script>
+</body>
+</html>
+
