@@ -3,25 +3,25 @@ $(function () {
     {
       pergunta: "Quem pode participar do Congresso ABESE?",
       resposta:
-        "Evento direcionado para empresários, gestores, profissionais e lideranças do setor de Segurança Eletrônica em busca de atualização, networking e oportunidades.",
+        "O evento é voltado para empresários, gestores, profissionais e lideranças do setor de segurança eletrônica que buscam atualização, networking e novas oportunidades de negócio.",
     },
     {
       pergunta: "Quando e onde acontece o Congresso ABESE 2025?",
       resposta:
-        "O evento acontece no dia 27 de novembro de 2025 no Milenium Centro de Convenções, em São Paulo.",
+        "O evento será realizado no dia 27 de novembro de 2025, das 14h às 18h, no - MILENIUM CENTRO DE CONVENÇÕES, em São Paulo (SP).",
     },
     {
       pergunta: "O que você vai encontrar no evento?",
       resposta:
-        "Conteúdo intensivo, palestras, workshops e networking com especialistas da área.",
+        "Palestras e painéis com especialistas do setor, insights sobre regulamentação, tecnologia e mercado, além de oportunidades únicas de networking e geração de negócios.",
     },
     {
       pergunta: "Tenho que pagar para participar do Congresso ABESE 2025?",
-      resposta: "A entrada é totalmente gratuita.",
+      resposta: "Não. O Congresso ABESE 2025 é gratuito.",
     },
     {
       pergunta: "O Congresso ABESE é aberto a não associados?",
-      resposta: "Sim, o evento é aberto para todos os interessados do setor.",
+      resposta: "Sim! O evento é aberto a todo o setor, mas associados ABESE têm condições especiais de participação.",
     },
   ];
 
