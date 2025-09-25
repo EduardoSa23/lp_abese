@@ -14,7 +14,7 @@ $(document).ready(function () {
   $mobile.empty();
   $.each(cardsProgramacao, function (i, card) {
     const $card = $(`
-      <div class="flex flex-col bg-white rounded-xl shadow border border-gray-200 px-7 py-5 gap-3">
+      <div class="card-programacao opacity-0 translate-y-8 transition-all duration-700 ease-out flex flex-col bg-white rounded-xl shadow border border-gray-200 px-7 py-5 gap-3">
         <div class="flex items-center gap-4 justify-center">
           <div class="bg-orange-500 text-white w-12 h-12 p-3 rounded-full flex items-center justify-center">
             <img src="${card.icon}" alt="${card.subtitulo}" class="w-6 h-6">
@@ -35,7 +35,7 @@ $(document).ready(function () {
   $desktop.empty();
   $.each(cardsProgramacao, function (i, card) {
     const $card = $(`
-      <div class="flex flex-col md:flex-row bg-white rounded-xl shadow border border-gray-200 px-7 py-5 gap-3">
+      <div class="card-programacao opacity-0 translate-y-8 transition-all duration-700 ease-out flex flex-col md:flex-row bg-white rounded-xl shadow border border-gray-200 px-7 py-5 gap-3">
         <div class="flex items-center gap-4 justify-center">
           <div class="bg-orange-500 text-white w-12 h-12 p-3 rounded-full flex items-center justify-center">
             <img src="${card.icon}" alt="${card.subtitulo}" class="w-6 h-6">
@@ -52,4 +52,31 @@ $(document).ready(function () {
     `);
     $desktop.append($card);
   });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        $(entry.target)
+          .removeClass("opacity-0 translate-y-8")
+          .addClass("opacity-100 translate-y-0");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  $(".card-programacao").each(function () {
+    observer.observe(this);
+  });
+
+  const $inscricao = $(".inscricao-programacao");
+  if ($inscricao.length) {
+    $inscricao.addClass("opacity-0 translate-y-8 transition-all duration-700 ease-out");
+    observer.observe($inscricao[0]);
+  }
+
+  const $sujeitaAlteracao = $(".sujeita-alteracao");
+  if ($sujeitaAlteracao.length) {
+    $sujeitaAlteracao.addClass("opacity-0 translate-y-8 transition-all duration-700 ease-out");
+    observer.observe($sujeitaAlteracao[0]);
+  }
 });

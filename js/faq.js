@@ -27,10 +27,10 @@ $(function () {
 
   const $faqContainer = $("#faqContainer");
 
-  // Monta cada item do FAQ dinamicamente
+  // Monta os itens do FAQ (inicialmente escondidos)
   $.each(faqs, function (i, faq) {
     const $item = $(`
-      <div class="faq-item border border-b-0 rounded-xl shadow-lg overflow-hidden mb-4">
+      <div class="faq-item border border-b-0 rounded-xl shadow-lg overflow-hidden mb-4" style="opacity:0; display:none;">
         <button class="faq-header w-full flex justify-between items-center p-4 text-left font-semibold text-[#0c2e57] bg-white hover:bg-gray-50 focus:outline-none"
                 aria-expanded="false">
           <span>${faq.pergunta}</span>
@@ -41,32 +41,60 @@ $(function () {
         </div>
       </div>
     `);
-
     $faqContainer.append($item);
   });
 
-  // Lógica do accordion
+  function fadeInFAQs() {
+  const $faqItems = $faqContainer.find(".faq-item");
+
+  $faqItems.each(function (index) {
+    $(this)
+      .delay(index * 200)
+      .queue(function (next) {
+        $(this).css("display", "block").animate({ opacity: 1 }, 500);
+        next();
+      });
+  });
+
+  $faqItems.promise().done(function () {
+    $(".inscrevaseFaq").fadeIn(500); // fade suave
+  });
+}
+
+$(".inscrevaseFaq").hide();
+
+  const faqSection = $("#faqContainer");
+  const observer = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          fadeInFAQs();
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  observer.observe(faqSection[0]);
+
   $faqContainer.on("click", ".faq-header", function () {
     const $btn = $(this);
     const $content = $btn.next(".faq-content");
     const $icon = $btn.find(".faq-icon");
 
     if ($content.is(":visible")) {
-      // Fechar
       $content.stop(true, true).animate({ opacity: 0 }, 200, function () {
         $content.hide();
       });
       $btn.attr("aria-expanded", "false");
       $icon.removeClass("rotate-180");
     } else {
-      // Fecha todos antes
       $faqContainer.find(".faq-content:visible").stop(true, true).animate({ opacity: 0 }, 200, function () {
         $(this).hide();
       });
       $faqContainer.find(".faq-header").attr("aria-expanded", "false");
       $faqContainer.find(".faq-icon").removeClass("rotate-180");
 
-      // Abre o clicado
       $content.show().stop(true, true).animate({ opacity: 1 }, 300);
       $btn.attr("aria-expanded", "true");
       $icon.addClass("rotate-180");
