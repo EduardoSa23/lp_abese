@@ -24,7 +24,7 @@
             <!-- Navigation Menu (desktop) -->
             <div class="hidden md:flex items-center space-x-8">
             <a href="#hero" class="text-white hover:text-orange-400 transition-colors">Início</a>
-            <a href="#pqParticipar" class="text-white hover:text-orange-400 transition-colors">Programa</a>
+            <a href="#programacao" class="text-white hover:text-orange-400 transition-colors">Programa</a>
             <a href="#patrocinadores" class="text-white hover:text-orange-400 transition-colors">Patrocinadores</a>
             </div>
 
@@ -71,7 +71,7 @@
                     <a href="#hero" class="block hover:text-orange-400">Início</a>
                 </li>
                 <li class="border-b p-4">
-                    <a href="#pqParticipar" class="block hover:text-orange-400">Programa</a>
+                    <a href="#programacao" class="block hover:text-orange-400">Programa</a>
                 </li>
                 <li class="border-b p-4">
                     <a href="#patrocinadores" class="block hover:text-orange-400">Patrocinadores</a>
@@ -107,33 +107,36 @@
     </header>
 
 
-    <section id="hero" class="relative flex items-center justify-center px-4 py-12 min-h-[80vh] md:h-[92vh] overflow-hidden">
+    <section id="hero" class="relative flex items-center justify-center px-4 py-12 min-h-screen overflow-hidden">
+        <!-- Video de fundo -->
         <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
             <source src="./images/video_banner.mp4" type="video/mp4">
         </video>
 
-        <div class="relative z-10 text-center w-full md:w-[60%] mx-auto flex flex-col justify-center items-center gap-6">
-            <h1 class="font-grotesk text-white text-4xl md:text-7xl mb-4 font-bold leading-tight">
-            CONGRESSO<br>
-            <span class="font-grotesk text-white">ABESE 2025</span>
+        <!-- Conteúdo central -->
+        <div class="relative z-10 text-center w-full max-w-5xl mx-auto flex flex-col justify-center items-center gap-6">
+            <h1 class="font-grotesk pt-12 md:pt-12 text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 font-bold leading-tight">
+                CONGRESSO<br>
+                <span class="font-grotesk text-white">ABESE 2025</span>
             </h1>
 
-            <h2 class="text-white text-lg md:text-3xl font-bold opacity-90">
-            Conectando o futuro à segurança inteligente
+            <h2 class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold opacity-90">
+                Conectando o futuro à segurança inteligente
             </h2>
 
-            <p class="text-white text-base md:text-xl opacity-80 max-w-2xl mx-auto px-2">
-            Mais do que estar presente, é estar preparado para o futuro.
+            <p class="text-white text-base sm:text-lg md:text-xl opacity-80 max-w-2xl mx-auto px-2">
+                Mais do que estar presente, é estar preparado para o futuro.
             </p>
 
             <a href="#inscricao"
-            class="bg-[#EF7D00] w-full md:w-[28%] hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors mb-4">
-            Inscreva-se gratuitamente
+                class="bg-[#EF7D00] w-full sm:w-[60%] md:w-[40%] lg:w-[28%] hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors mb-4">
+                Inscreva-se gratuitamente
             </a>
 
-            <div id="heroCardsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mx-auto mb-10"></div>
+            <div id="heroCardsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full mx-auto mb-10"></div>
         </div>
     </section>
+
 
 
     <section id="pqParticipar" class="relative bg-white py-24 px-6">
@@ -331,7 +334,7 @@
 
                 <div class="info">
                     <img src="./images/icons/local_evento.svg" alt="">
-                    <div class="text-lg">
+                    <div class="text-lg font-card">
                         <p class="pb-2">Endereço</p>
                         <span>R. Dr. Bacelar, 1043 - Vila Clementino</span>
                         <span>São Paulo - SP | CEP 04026-002</span>
@@ -340,7 +343,7 @@
 
                 <div class="info">
                     <img class="w-16 h-16" src="./images/icons/horario.svg" alt="">
-                    <div class="text-lg">
+                    <div class="text-lg font-card">
                         <p class="pb-2">Horário</p>
                         <span>27 de novembro de 2025</span><br>
                         <span>A partir das 14h</span>
@@ -349,7 +352,7 @@
 
                 <div class="info">
                     <img class="w-16 h-16" src="./images/icons/como_chegar.svg" alt="">
-                    <div class="text-lg">
+                    <div class="text-lg font-card">
                         <p class="pb-2">Como chegar</p>
                         <span>Metrô Santa Cruz-Vila Lobos (5 min a pé)</span>
                         <span>Estacionamento disponível no local</span>
