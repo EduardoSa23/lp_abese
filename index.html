@@ -424,40 +424,9 @@
             <div class="w-24 h-1 bg-[#A1A1A1] mx-auto mt-6"></div>
             </div>
 
+            <!-- Aqui entra o form da RD Station -->
             <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <form id="inscricao-form" class="space-y-6">
-                
-                <!-- Campos montados via jQuery -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 grid-dinamica"></div>
-
-                <!-- resto do form permanece igual -->
-                <div class="flex items-start space-x-3">
-                <input 
-                    type="checkbox" 
-                    id="comunicacoes" 
-                    name="comunicacoes"
-                    class="mt-1 h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300 rounded"
-                >
-                <label for="comunicacoes" class="text-sm text-gray-700">
-                    Concordo em receber comunicações.
-                </label>
-                </div>
-
-                <div class="pt-6">
-                <button 
-                    type="submit" 
-                    class="w-full bg-[#EF7D00] hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg"
-                >
-                    Inscreva-se
-                </button>
-                </div>
-
-                <div class="text-center pt-4">
-                <p class="text-sm text-gray-600">
-                    Ao se inscrever, você concorda com nossa política de privacidade e termos de uso.
-                </p>
-                </div>
-            </form>
+            <div role="main" id="congresso-abese-2025-506790c06c0e1ab6c71e"></div>
             </div>
         </div>
     </section>
@@ -595,6 +564,10 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+    <script type="text/javascript">
+  new RDStationForms('congresso-abese-2025-506790c06c0e1ab6c71e', 'UA-138058572-1').createForm();
+    </script>
     <script src="./js/main.js"></script>
     <script src="./js/hero.js"></script>
     <script src="./js/depoimentos.js"></script>
