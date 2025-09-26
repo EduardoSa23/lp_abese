@@ -1,0 +1,124 @@
+section.depoimentosMobile {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    overflow: hidden;
+    background-color: #E7E7E9;
+    background-image: url("../images/bg_depoimentos.png");
+    background-position: center;
+    background-size: cover;
+}
+
+/* Estilizando cada card */
+.card-depoimentos-mobile {
+    background-color: #183154;
+    color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    height: 600px;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.card-depoimentos-mobile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 1.5rem 0;
+    object-fit: cover;
+}
+
+.card-depoimentos-mobile h4 {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #EF7D00;
+    margin-bottom: 3px;
+    font-size: large;
+}
+
+.card-depoimentos-mobile p {
+    font-size: large;
+    font-weight: 300;
+    width: 90%;
+}
+
+.card-depoimentos-mobile span {
+    font-size: 0.875rem;
+    opacity: 0.8;
+    font-size: large;
+}
+
+.carousel-track-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 300px
+}
+
+.carousel-track-mobile {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Desktop: 2 cards por vez */
+@media (min-width: 769px) {
+
+  .dot-mobile {
+    display: none;
+  }
+
+  .carousel-mobile {
+    display: none;
+  }
+}
+
+/* ===== Ajustes para mobile: 1 card = 100% da tela ===== */
+@media (max-width: 768px) {
+  /* tira o padding lateral do section pra o card "encostar" mais na borda da tela */
+  section.depoimentosMobile {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* esconde overflow e garante comportamento suave */
+  .container-carousel-mobile {
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* track: sem gap e sem space-between — assim cada card pode ter 100% */
+  .carousel-track-mobile {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 0;                  /* importante */
+    justify-content: flex-start;
+    align-items: stretch;
+    will-change: transform;
+  }
+
+  /* card ocupa 100% do track (inclui padding interno graças ao box-sizing) */
+  .card-depoimentos-mobile {
+    box-sizing: border-box;
+    min-width: 90%;
+    flex: 0 0 90%;
+    width: 100%;
+    margin: 0 20px;
+    padding: 2rem;           /* mantém o padding interno do card */
+    height: auto;           /* opcional: ajuste se quiser altura fixa */
+  }
+
+  /* imagens levemente menores para caber melhor em telas pequenas */
+  .card-depoimentos-mobile img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+

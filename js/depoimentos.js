@@ -1,89 +1,56 @@
-$(document).ready(function () {
-  const track = $(".carousel-track");
-  const buttonsContainer = $(".carousel-buttons");
+document.addEventListener("DOMContentLoaded", () => {
+  const groups = document.querySelectorAll(".container-carousel > div");
+  const dots = document.querySelectorAll("#depoimentos .dot");
 
-  // Array de cards
-  const cards = [
-    {
-      text: "“A ABESE é mais que uma associação, é um agente catalisador do desenvolvimento, da inovação e da segurança eletrônica no Brasil.”",
-      img: "./images/depoimentos/andre_prado.png",
-      name: "André Prado",
-      role: "CEO - Emive&CO",
-    },
-    {
-      text: "“Para o Grupo Invicta, estar na ABESE significa estar conectado com inovação, conhecimento e relacionamento de alto nível.”",
-      img: "felipe-provenzano.jpg",
-      name: "Felipe Provenzano",
-      role: "CEO - Grupo Invicta",
-    },
-    {
-      text: "“Participar da ABESE nos trouxe novas conexões e abriu portas para projetos inovadores.”",
-      img: "pessoa3.jpg",
-      name: "Maria Silva",
-      role: "Diretora - TechSeg",
-    },
-    {
-      text: "“O evento é uma oportunidade única de networking e aprendizado no setor de segurança eletrônica.”",
-      img: "pessoa4.jpg",
-      name: "João Santos",
-      role: "CEO - SafeTech",
-    },
-  ];
+  let currentIndex = 0;
+  let intervalId = null;
 
-  track.empty();
-  $.each(cards, function (i, card) {
-    const $card = $(`
-      <div class="card-depoimentos">
-        <p>${card.text}</p>
-        <img src="${card.img}" alt="${card.name}">
-        <h4>${card.name}</h4>
-        <span>${card.role}</span>
-      </div>
-    `);
-    track.append($card);
+  function showGroup(index) {
+    groups.forEach((g, i) => {
+      g.classList.toggle("active", i === index);
+    });
+    dots.forEach((d, i) => {
+      d.classList.toggle("bg-[#EF7D00]", i === index);
+      d.classList.toggle("bg-[#183154]", i !== index);
+    });
+    currentIndex = index;
+  }
+
+  function startAutoplay() {
+    intervalId = setInterval(() => {
+      let nextIndex = (currentIndex + 1) % groups.length;
+      showGroup(nextIndex);
+    }, 18000); // troca a cada 5s
+  }
+
+  function stopAutoplay() {
+    clearInterval(intervalId);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      stopAutoplay();
+      showGroup(index);
+      startAutoplay();
+    });
   });
 
-  // Renderiza os botões
-  buttonsContainer.empty();
-  $.each(cards, function (i) {
-    const $btn = $(
-      `<span class="btn-nav ${i === 0 ? "active" : ""}" data-slide="${i}"></span>`
-    );
-    buttonsContainer.append($btn);
-  });
+  showGroup(0); 
+  startAutoplay();
 
-  // const buttons = $(".btn-nav");
-  // let currentIndex = 0;
-  // const totalSlides = cards.length;
-  // let autoSlide;
+  const depoimentosSection = document.getElementById("depoimentos");
 
-  // function goToSlide(index) {
-  //   currentIndex = index;
-  //   let translateX = -(index * 100);
-  //   track.css("transform", "translateX(" + translateX + "%)");
-  //   buttons.removeClass("active");
-  //   buttons.eq(index).addClass("active");
-  // }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          depoimentosSection.classList.add("visible");
+          observer.unobserve(depoimentosSection); // só anima uma vez
+        }
+      });
+    },
+    { threshold: 0.1 } // 10% da seção visível
+  );
 
-  // function nextSlide() {
-  //   currentIndex = (currentIndex + 1) % totalSlides;
-  //   goToSlide(currentIndex);
-  // }
-
-  // // autoplay a cada 4 segundos
-  // function startAutoSlide() {
-  //   autoSlide = setInterval(nextSlide, 4000);
-  // }
-
-  // function stopAutoSlide() {
-  //   clearInterval(autoSlide);
-  // }
-
-  // buttons.click(function () {
-  //   stopAutoSlide();
-  //   goToSlide($(this).data("slide"));
-  //   startAutoSlide();
-  // });
-
-  // startAutoSlide();
+  observer.observe(depoimentosSection);
 });
