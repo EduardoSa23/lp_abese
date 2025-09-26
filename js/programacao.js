@@ -2,9 +2,9 @@ $(document).ready(function () {
   const cardsProgramacao = [
     { icon: "./images/icons/pessoas_branco.svg", title: "13h30", subtitulo: "Início do Credenciamento", description: "Recepção dos participantes e entrega de materiais" },
     { icon: "./images/icons/lampada_branca.svg", title: "14h00", subtitulo: "Abertura do Evento", description: "Apresentação oficial do Congresso ABESE 2025" },
-    { icon: "./images/icons/cidade_branca.svg", title: "14h40", subtitulo: "Painel 1 - ABESELabs e Público X Privado", description: "Discussão sobre a interação entre setor público e privado na segurança eletrônica" },
-    { icon: "./images/icons/wifi_branco.svg", title: "15h40", subtitulo: "Painel 2 - Inovações - IOT, IA, Cibersegurança", description: "As mais recentes inovações tecnológicas transformando o setor" },
-    { icon: "./images/icons/seguranca_branco.svg", title: "16h40", subtitulo: "Painel 3 - Novos Mercados e Novas Oportunidades", description: "Explorando verticais e oportunidades emergentes no mercado" },
+    { icon: "./images/icons/cidade_branca.svg", title: "14h40", subtitulo: "Painel 1 - Tríplice Aliança Academia, Governo e Mercado", description: "Discussão sobre a interação entre setor público e privado na segurança eletrônica" },
+    { icon: "./images/icons/wifi_branco.svg", title: "15h40", subtitulo: "Painel 2 - Revolução 5.0 IA, Dados e Cibersegurança", description: "As mais recentes inovações tecnológicas transformando o setor" },
+    { icon: "./images/icons/seguranca_branco.svg", title: "16h40", subtitulo: "Segurança Personalizada Atendendo as Expectativas dos Novos Mercados", description: "Explorando verticais e oportunidades emergentes no mercado" },
     { icon: "./images/icons/pessoas_branco.svg", title: "17h40", subtitulo: "Encerramento", description: "Considerações finais e próximos passos" },
     { icon: "./images/icons/xicara_branco.svg", title: "18h00", subtitulo: "Coquetel", description: "Networking e confraternização entre os participantes" }
   ];

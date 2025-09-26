@@ -1,7 +1,6 @@
 $(document).ready(function () {
   const patrocinadores = [
-    { img: "./images/logos/logo_abese.png", texto: "Logo Abese"},
-    { img: "./images/logos/logo_auvo.png", texto: "Logo Auvo"},
+    { img: "./images/logos/logo_exposec.png", texto: "Logo Exposec"},
     { img: "./images/logos/logo_fulltime.png", texto: "Logo Fulltime"},
     { img: "./images/logos/logo_getrak.png", texto: "Logo Getrak"},
     { img: "./images/logos/logo_ifaseg.png", texto: "Logo Ifaseg"},

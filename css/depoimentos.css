@@ -59,24 +59,31 @@ section.depoimentos {
     gap: 300px
 }
 
-.container-carousel > div {
-  opacity: 0;
-  transform: translateY(20px); /* ou translateX se quiser horizontal */
-  transition: opacity 0.9s ease, transform 0.9s ease;
-  position: absolute; /* sobrepor os cards */
-  width: 100%;
-  top: 0;
-  left: 0;
+.container-carousel {
+  position: relative; /* container vira referência */
+  min-height: 600px; /* garante altura mínima pro espaço dos cards */
 }
 
-.container-carousel > div.active {
+.container-carousel > div {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  pointer-events: none; /* evita clique em elementos invisíveis */
+}
+
+.container-carousel > div.active {
   opacity: 1;
   transform: translateY(0);
-  position: relative; /* mantém o card ativo no fluxo */
+  pointer-events: auto; /* só o ativo recebe interação */
 }
+
 
 @media (max-width: 768px) {
   section.depoimentos {
