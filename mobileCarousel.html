@@ -1,61 +1,393 @@
-  <div class="container-carousel max-w-7xl mx-auto pb-12">
-    <div class="carousel-desktop">
-        <!-- Grupo 1 -->
-        <div class="active">
-            <div class="card-depoimentos">
-                <p>“A ABESE é mais que uma associação, é um agente catalisador do desenvolvimento, da inovação e da segurança eletrônica no Brasil.”</p>
-                <img src="./images/depoimentos/andre_prado.png" alt="André Prado - CEO - Emive&CO">
-                <h4>André Prado</h4>
-                <span>CEO - Emive&CO</span>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congresso ABESE 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"><link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <link href="./css/depoimentos.css" rel="stylesheet">
+    <link href="./css/localizacao.css" rel="stylesheet">
+    <link href="./css/mobileCarousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#E6E6E6] min-h-screen">
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#183154] shadow-lg">
+        <nav class="flex items-center justify-between px-4 py-3 md:px-12">
+            <div class="flex items-center space-x-2">
+            <img src="./images/icons/logo.svg" alt="Logo abese" class="md:h-6 h-4" />
             </div>
-            <div class="card-depoimentos">
-                <p>“Para o Grupo Invicta, estar na ABESE significa estar conectado com inovação, conhecimento e relacionamento de alto nível”</p>
-                <img src="./images/depoimentos/felipe_provenzano.png" alt="Felipe Provenzano - CEO - Grupo Invicta">
-                <h4>Felipe Provenzano</h4>
-                <span>CEO - Grupo Invicta</span>
+
+            <div class="hidden md:flex items-center space-x-8">
+            <a href="#hero" class="text-white hover:text-orange-400 transition-colors">Início</a>
+            <a href="#programacao" class="text-white hover:text-orange-400 transition-colors">Programa</a>
+            <a href="#patrocinadores" class="text-white hover:text-orange-400 transition-colors">Patrocinadores</a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-2">
+            <div class="bg-white rounded-lg px-3 py-2 text-[#183154] font-bold text-xl">
+                <span id="days"></span>
+            </div>
+            <span class="text-white text-lg font-bold">d</span>
+            <div class="bg-white rounded-lg px-3 py-2 text-[#183154] font-bold text-xl">
+                <span id="hours"></span>
+            </div>
+            <span class="text-white text-lg font-bold">h</span>
+            <div class="bg-white rounded-lg px-3 py-2 text-[#183154] font-bold text-xl">
+                <span id="minutes"></span>
+            </div>
+            <span class="text-white text-lg font-bold">m</span>
+            <div class="bg-white rounded-lg px-3 py-2 text-[#183154] font-bold text-xl">
+                <span id="seconds"></span>
+            </div>
+            <span class="text-white text-lg font-bold pr-3">s</span>
+
+            <a href="#inscricao"
+                class="bg-[#EF7D00] hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors ml-4 text-sm md:text-base">
+                Inscreva-se gratuitamente
+            </a>
+            </div>
+
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu"
+            class="hidden flex flex-col items-center bg-[#183154] text-white py-6 space-y-6 md:hidden transition-all duration-300">
+            <ul class="w-full text-center">
+                <li class="border-b border-t p-4">
+                    <a href="#hero" class="block hover:text-orange-400">Início</a>
+                </li>
+                <li class="border-b p-4">
+                    <a href="#programacao" class="block hover:text-orange-400">Programa</a>
+                </li>
+                <li class="border-b p-4">
+                    <a href="#patrocinadores" class="block hover:text-orange-400">Patrocinadores</a>
+                </li>
+            </ul>
+
+            <div class="flex items-center gap-2">
+                <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-lg">
+                    <span id="m-days"></span>
+                </div>
+                <span class="text-white font-bold">d</span>
+                <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-lg">
+                    <span id="m-hours"></span>
+                </div>
+                <span class="text-white font-bold">h</span>
+                <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-lg">
+                    <span id="m-minutes"></span>
+                </div>
+                <span class="text-white font-bold">m</span>
+                <div class="bg-white rounded px-2 py-1 text-[#183154] font-bold text-lg">
+                    <span id="m-seconds"></span>
+                </div>
+                <span class="text-white font-bold">m</span>
+            </div>
+
+            <a href="#inscricao"
+            class="bg-[#EF7D00] hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold">
+            Inscreva-se
+            </a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative flex items-center justify-center px-4 py-12 min-h-screen overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+            <source src="./images/video_banner.mp4" type="video/mp4">
+        </video>
+
+        <div class="relative z-10 text-center w-full max-w-5xl mx-auto flex flex-col justify-center items-center gap-6">
+            <h1 class="font-grotesk pt-12 md:pt-12 text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 font-bold leading-tight">
+                CONGRESSO<br>
+                <span class="font-grotesk text-white">ABESE 2025</span>
+            </h1>
+
+            <h2 class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold opacity-90">
+                Conectando o futuro à segurança inteligente
+            </h2>
+
+            <p class="text-white text-base sm:text-lg md:text-xl opacity-80 max-w-2xl mx-auto px-2">
+                Mais do que estar presente, é estar preparado para o futuro.
+            </p>
+
+            <a href="#inscricao"
+                class="bg-[#EF7D00] w-full sm:w-[60%] md:w-[40%] lg:w-[28%] hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors mb-4">
+                Inscreva-se gratuitamente
+            </a>
+
+            <div id="heroCardsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full mx-auto mb-10"></div>
+        </div>
+    </section>
+
+    <section id="pqParticipar" class="relative bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-[#183154] mb-6">Por que participar?</h2>
+                <div class="w-24 h-1 bg-[#A1A1A1] mx-auto"></div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 md:p-12 w-full mx-auto">
+                <div>
+                    <i class="fa-chevron-down w-16 h-16"></i>
+                </div>
+                <div id="pqParticiparDestaques" class="flex flex-wrap justify-center gap-2 mb-8"></div>
+                
+                <div class="text-center space-y-8">
+                    <p class="text-gray-700 text-lg md:text-xl leading-relaxed w-[78%] mx-auto">
+                        O Congresso ABESE é uma oportunidade única para atualização, networking e descoberta de 
+                        novas soluções no mercado. Não se trata apenas de um evento, mas de ter acesso ao que há 
+                        de mais atual em tecnologia, regulamentos e modelos de negócios que estão redefinindo a 
+                        segurança eletrônica.
+                    </p>
+                    
+                    <p class="text-gray-700 text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
+                        É um momento estratégico para decisores do setor, que podem preparar o seu plano de 
+                        negócios para 2026 a partir dos cenários projetados pelos estudos e insights da ABESE.
+                    </p>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-2xl md:text-3xl font-grotesk font-bold text-[#183154] mb-4">
+                            Mais do que estar presente, é estar preparado para o futuro.
+                        </h3>
+                        <div class="w-24 h-1 bg-gray-400 mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia" class="text-white py-24 px-6 bg-cover bg-center">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-grotesk font-bold mb-8">Mais de 30 anos de história</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto">
+                "Há mais de 30 anos, <span class="text-[#EF7D00]">conectamos indústrias, distribuidores</span> 
+                e falamos de serviço em jornadas de conhecimento, na principal entidade de eventos para o 
+                <span class="text-[#EF7D00]">setor de Segurança Eletrônica no Brasil</span>."
+            </p>
+
+            <!-- Cards -->
+            <div id="historiaCards" class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10"></div>
+
+            <!-- Rodapé com destaques -->
+            <ul class="flex flex-col md:flex-row justify-between mt-16 bg-[#D7D4D8] w-full md:w-[60%] mx-auto px-10 py-4 rounded-full">
+                <li class="flex items-center gap-2">
+                    <span class="w-4 h-4 rounded-full bg-[#EF7D00]"></span>
+                    <p class="text-[#183154] font-semibold">Líder do setor</p>
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="w-4 h-4 rounded-full bg-[#EF7D00]"></span>
+                    <p class="text-[#183154] font-semibold">Tradição comprovada</p>
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="w-4 h-4 rounded-full bg-[#EF7D00]"></span>
+                    <p class="text-[#183154] font-semibold">Inovação constante</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="programacaoCompleta" class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-grotesk font-bold text-[#183154]">Programação Completa</h2>
+        <p class="text-[#404040] text-lg mt-6 w-full md:w-[78%] mx-auto">Fique por dentro da nossa programação e não perca nenhum momento deste evento transformador</p>
+        <div class="w-24 h-1 bg-[#183154] mx-auto mt-6"></div>
+        </div>
+
+        <div id="cardsProgramacaoMobile" class="block md:hidden"></div>
+
+        <div id="cardsProgramacaoDesktop" class="hidden md:block max-w-5xl mx-auto space-y-4"></div>
+
+        <div class="sujeita-alteracao flex justify-center mt-5">
+            <span class="text-[#8C8C8C] text-sm">*Programação sujeita a alteração</span>
+        </div>
+
+        <div class="inscricao-programacao bg-[#183154] text-white rounded-xl p-12 text-center mt-12 max-w-5xl mx-auto">
+        <h3 class="text-xl md:text-2xl font-bold mb-6">Não perca essa oportunidade!</h3>
+        <p class="mb-8 text-lg">Garanta sua vaga e participe de todas essas discussões transformadoras</p>
+        <a href="#inscricao" class="bg-[#EF7D00] hover:bg-orange-600 px-6 py-3 rounded-lg font-semibold">
+            Inscreva-se Agora
+        </a>
+        </div>
+    </section>
+
+    <!-- <section id="palestrantes" class="relative py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+            <div class="flex justify-center mb-6">
+                <img src="./images/icons/palestrantes.svg" class="w-14 h-14">
+            </div>
+            <h1 class="text-white font-bold text-3xl md:text-5xl">
+                Palestrantes Especialistas
+            </h1>
+            <p class="text-[#E7E9EB] text-lg mt-6 w-full md:w-[50%] mx-auto">
+                Conheça os principais líderes e especialistas que compartilharão conhecimento no evento
+            </p>
+            <div class="w-24 h-1 bg-[#A1A1A1] mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"></div>
+        </div>
+    </section> -->
+
+    <section id="depoimentos" class="depoimentos w-full py-16 bg-gray-100">
+        <div class="flex justify-center mb-4">
+            <img src="./images/icons/depoimentos.svg" class="w-14 h-14">
+        </div>
+        <h2 class="font-grotesk text-[#183154] font-bold text-3xl md:text-5xl text-center">
+            Depoimentos
+        </h2>
+        <p class="text-[#404040] text-lg mt-6 w-full md:w-[25%] mx-auto text-center">
+            Veja o que os participantes das edições anteriores têm a dizer sobre a ABESE
+        </p>
+        <div class="w-24 h-1 bg-[#A1A1A1] mx-auto mt-6 mb-24"></div>
+
+        <!-- Carousel -->
+        <div class="container-carousel md:max-w-5xl max-w-7xl mx-auto pb-12">
+                <!-- Grupo 1 -->
+                <div class="active">
+                    <div class="card-depoimentos">
+                        <p>“A ABESE é mais que uma associação, é um agente catalisador do desenvolvimento, da inovação e da segurança eletrônica no Brasil.”</p>
+                        <img src="./images/depoimentos/andre_prado.png" alt="André Prado - CEO - Emive&CO">
+                        <h4>André Prado</h4>
+                        <span>CEO - Emive&CO</span>
+                    </div>
+                    <div class="card-depoimentos">
+                        <p>“Para o Grupo Invicta, estar na ABESE significa estar conectado com inovação, conhecimento e relacionamento de alto nível”</p>
+                        <img src="./images/depoimentos/felipe_provenzano.png" alt="Felipe Provenzano - CEO - Grupo Invicta">
+                        <h4>Felipe Provenzano</h4>
+                        <span>CEO - Grupo Invicta</span>
+                    </div>
+                </div>
+
+                <!-- Grupo 2 -->
+                <div>
+                <div class="card-depoimentos">
+                    <p>“A ABESE é mais do que uma entidade representativa: é um pilar importante que apoia o crescimento de todo o ecossistema de segurança.”</p>
+                    <img src="./images/depoimentos/renato_martins.png" alt="Renato Martins - CEO - Segware">
+                    <h4>Renato Martins</h4>
+                    <span>CEO - Segware</span>
+                </div>
+                <div class="card-depoimentos">
+                    <p>“Ser associado ABESE significa ter representatividade diante do mercado e dos órgãos reguladores, além de contar com apoio para enfrentar desafios comuns.”</p>
+                    <img src="./images/depoimentos/carlos_xavier.png" alt="Carlos Xavier - Diretor Executivo – XM Tecnologia">
+                    <h4>Carlos Xavier</h4>
+                    <span>Diretor Executivo – XM Tecnologia</span>
+                </div>
+                </div>
+
+                <!-- Grupo 3 -->
+                <div>
+                <div class="card-depoimentos">
+                    <p>“Fazer parte da ABESE nos conecta a um ecossistema sólido de empresas parceiras, gera oportunidades de aprendizado e colaboração.”</p>
+                    <img src="./images/depoimentos/mauricio_ciaccio.png" alt="Maurício Ciaccio - Diretor de Inteligência de Negócios – AVANTIA">
+                    <h4>Maurício Ciaccio</h4>
+                    <span>Diretor de Inteligência de Negócios – AVANTIA</span>
+                </div>
+                <div class="card-depoimentos">
+                    <p>"“A ABESE é, sem dúvida, uma aliada essencial para que a Getrak siga contribuindo com o desenvolvimento do setor no Brasil.”</p>
+                    <img src="./images/depoimentos/pedro_costa.png" alt="Pedro Costa - Gerente de Marketing – Getrak">
+                    <h4>Pedro Costa</h4>
+                    <span>Gerente de Marketing – Getrak</span>
+                </div>
+                </div>
+
+                <div>
+                <div class="card-depoimentos">
+                    <p>“Como associados da ABESE, nós da X3TECH temos acesso a informações atualizadas sobre o mercado em que atuamos, no campo da tecnologia, administrativo e jurídico.”</p>
+                    <img src="./images/depoimentos/emerson_osvarino.png" alt="Emerson Osvarino - Gerente Comercial e Marketing – X3TECH">
+                    <h4>Emerson Osvarino</h4>
+                    <span>Gerente Comercial e Marketing – X3TECH</span>
+                </div>
+                <div class="card-depoimentos">
+                    <p>“É uma honra fazermos parte desta associação que representa, fortalece e impulsiona o setor de segurança eletrônica em todo o Brasil.”</p>
+                    <img src="./images/depoimentos/carolina_wierzbicki.png" alt="Carolina Wierzbicki - Gerente comercial - VETTI TECNOLOGIA">
+                    <h4>Carolina Wierzbicki</h4>
+                    <span>Gerente comercial - VETTI TECNOLOGIA</span>
+                </div>
+                </div>
             </div>
         </div>
 
+        <!-- Bolinhas -->
+        <div class="flex justify-center gap-3 mt-8">
+            <button class="dot w-4 h-4 rounded-full bg-[#EF7D00]"></button>
+            <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
+            <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
+            <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
+        </div>
+    </section>
+
+    <section id="depoimentosMobile" class="depoimentosMobile w-full py-16 bg-gray-100">
+    <div class="flex justify-center mb-4">
+        <img src="./images/icons/depoimentos.svg" class="w-14 h-14">
+    </div>
+    <h2 class="font-grotesk text-[#183154] font-bold text-3xl md:text-5xl text-center">
+        Depoimentos
+    </h2>
+    <p class="text-[#404040] text-lg mt-6 w-full md:w-[25%] mx-auto text-center">
+        Veja o que os participantes das edições anteriores têm a dizer sobre a ABESE
+    </p>
+    <div class="w-24 h-1 bg-[#A1A1A1] mx-auto mt-6 mb-24"></div>
+
+    <div class="container-carousel-mobile max-w-7xl mx-auto pb-12">
+
+        <div class="carousel-track-mobile carousel-mobile">
+        <div class="card-depoimentos-mobile">
+            <p>“A ABESE é mais que uma associação, é um agente catalisador do desenvolvimento, da inovação e da segurança eletrônica no Brasil.”</p>
+            <img src="./images/depoimentos/andre_prado.png" alt="André Prado - CEO - Emive&CO">
+            <h4>André Prado</h4>
+            <span>CEO - Emive&CO</span>
+        </div>
+        <div class="card-depoimentos-mobile">
+            <p>“Para o Grupo Invicta, estar na ABESE significa estar conectado com inovação, conhecimento e relacionamento de alto nível”</p>
+            <img src="./images/depoimentos/felipe_provenzano.png" alt="Felipe Provenzano - CEO - Grupo Invicta">
+            <h4>Felipe Provenzano</h4>
+            <span>CEO - Grupo Invicta</span>
+        </div>
+
         <!-- Grupo 2 -->
-        <div>
-        <div class="card-depoimentos">
+        <div class="card-depoimentos-mobile">
             <p>“A ABESE é mais do que uma entidade representativa: é um pilar importante que apoia o crescimento de todo o ecossistema de segurança.”</p>
             <img src="./images/depoimentos/renato_martins.png" alt="Renato Martins - CEO - Segware">
             <h4>Renato Martins</h4>
             <span>CEO - Segware</span>
         </div>
-        <div class="card-depoimentos">
+        <div class="card-depoimentos-mobile">
             <p>“Ser associado ABESE significa ter representatividade diante do mercado e dos órgãos reguladores, além de contar com apoio para enfrentar desafios comuns.”</p>
             <img src="./images/depoimentos/carlos_xavier.png" alt="Carlos Xavier - Diretor Executivo – XM Tecnologia">
             <h4>Carlos Xavier</h4>
             <span>Diretor Executivo – XM Tecnologia</span>
         </div>
-        </div>
 
         <!-- Grupo 3 -->
-        <div>
-        <div class="card-depoimentos">
+        <div class="card-depoimentos-mobile">
             <p>“Fazer parte da ABESE nos conecta a um ecossistema sólido de empresas parceiras, gera oportunidades de aprendizado e colaboração.”</p>
             <img src="./images/depoimentos/mauricio_ciaccio.png" alt="Maurício Ciaccio - Diretor de Inteligência de Negócios – AVANTIA">
             <h4>Maurício Ciaccio</h4>
             <span>Diretor de Inteligência de Negócios – AVANTIA</span>
         </div>
-        <div class="card-depoimentos">
+        <div class="card-depoimentos-mobile">
             <p>"“A ABESE é, sem dúvida, uma aliada essencial para que a Getrak siga contribuindo com o desenvolvimento do setor no Brasil.”</p>
             <img src="./images/depoimentos/pedro_costa.png" alt="Pedro Costa - Gerente de Marketing – Getrak">
             <h4>Pedro Costa</h4>
             <span>Gerente de Marketing – Getrak</span>
         </div>
-        </div>
 
-        <div>
-        <div class="card-depoimentos">
+        <div class="card-depoimentos-mobile">
             <p>“Como associados da ABESE, nós da X3TECH temos acesso a informações atualizadas sobre o mercado em que atuamos, no campo da tecnologia, administrativo e jurídico.”</p>
             <img src="./images/depoimentos/emerson_osvarino.png" alt="Emerson Osvarino - Gerente Comercial e Marketing – X3TECH">
             <h4>Emerson Osvarino</h4>
             <span>Gerente Comercial e Marketing – X3TECH</span>
         </div>
-        <div class="card-depoimentos">
+        <div class="card-depoimentos-mobile ml-7 mr-0"">
             <p>“É uma honra fazermos parte desta associação que representa, fortalece e impulsiona o setor de segurança eletrônica em todo o Brasil.”</p>
             <img src="./images/depoimentos/carolina_wierzbicki.png" alt="Carolina Wierzbicki - Gerente comercial - VETTI TECNOLOGIA">
             <h4>Carolina Wierzbicki</h4>
@@ -64,71 +396,218 @@
         </div>
     </div>
 
-    <div class="carousel-track carousel-mobile">
-      <div class="card-depoimentos">
-        <p>“A ABESE é mais que uma associação, é um agente catalisador do desenvolvimento, da inovação e da segurança eletrônica no Brasil.”</p>
-        <img src="./images/depoimentos/andre_prado.png" alt="André Prado - CEO - Emive&CO">
-        <h4>André Prado</h4>
-        <span>CEO - Emive&CO</span>
-      </div>
-      <div class="card-depoimentos">
-        <p>“Para o Grupo Invicta, estar na ABESE significa estar conectado com inovação, conhecimento e relacionamento de alto nível”</p>
-        <img src="./images/depoimentos/felipe_provenzano.png" alt="Felipe Provenzano - CEO - Grupo Invicta">
-        <h4>Felipe Provenzano</h4>
-        <span>CEO - Grupo Invicta</span>
-      </div>
-
-    <!-- Grupo 2 -->
-      <div class="card-depoimentos">
-        <p>“A ABESE é mais do que uma entidade representativa: é um pilar importante que apoia o crescimento de todo o ecossistema de segurança.”</p>
-        <img src="./images/depoimentos/renato_martins.png" alt="Renato Martins - CEO - Segware">
-        <h4>Renato Martins</h4>
-        <span>CEO - Segware</span>
-      </div>
-      <div class="card-depoimentos">
-        <p>“Ser associado ABESE significa ter representatividade diante do mercado e dos órgãos reguladores, além de contar com apoio para enfrentar desafios comuns.”</p>
-        <img src="./images/depoimentos/carlos_xavier.png" alt="Carlos Xavier - Diretor Executivo – XM Tecnologia">
-        <h4>Carlos Xavier</h4>
-        <span>Diretor Executivo – XM Tecnologia</span>
-      </div>
-
-    <!-- Grupo 3 -->
-      <div class="card-depoimentos">
-        <p>“Fazer parte da ABESE nos conecta a um ecossistema sólido de empresas parceiras, gera oportunidades de aprendizado e colaboração.”</p>
-        <img src="./images/depoimentos/mauricio_ciaccio.png" alt="Maurício Ciaccio - Diretor de Inteligência de Negócios – AVANTIA">
-        <h4>Maurício Ciaccio</h4>
-        <span>Diretor de Inteligência de Negócios – AVANTIA</span>
-      </div>
-      <div class="card-depoimentos">
-        <p>"“A ABESE é, sem dúvida, uma aliada essencial para que a Getrak siga contribuindo com o desenvolvimento do setor no Brasil.”</p>
-        <img src="./images/depoimentos/pedro_costa.png" alt="Pedro Costa - Gerente de Marketing – Getrak">
-        <h4>Pedro Costa</h4>
-        <span>Gerente de Marketing – Getrak</span>
-      </div>
-
-      <div class="card-depoimentos">
-        <p>“Como associados da ABESE, nós da X3TECH temos acesso a informações atualizadas sobre o mercado em que atuamos, no campo da tecnologia, administrativo e jurídico.”</p>
-        <img src="./images/depoimentos/emerson_osvarino.png" alt="Emerson Osvarino - Gerente Comercial e Marketing – X3TECH">
-        <h4>Emerson Osvarino</h4>
-        <span>Gerente Comercial e Marketing – X3TECH</span>
-      </div>
-      <div class="card-depoimentos">
-        <p>“É uma honra fazermos parte desta associação que representa, fortalece e impulsiona o setor de segurança eletrônica em todo o Brasil.”</p>
-        <img src="./images/depoimentos/carolina_wierzbicki.png" alt="Carolina Wierzbicki - Gerente comercial - VETTI TECNOLOGIA">
-        <h4>Carolina Wierzbicki</h4>
-        <span>Gerente comercial - VETTI TECNOLOGIA</span>
-      </div>
+    <!-- Bolinhas -->
+    <div class="flex justify-center gap-3 mt-8">
+        <button class="dot w-4 h-4 rounded-full bg-[#EF7D00]"></button>
+        <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
+        <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
+        <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
+        <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
+        <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
+        <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
+        <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
     </div>
-  </div>
+    </section>
 
-  <!-- Bolinhas -->
-  <div class="flex justify-center gap-3 mt-8">
-    <button class="dot w-4 h-4 rounded-full bg-[#EF7D00]"></button>
-    <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
-    <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
-    <button class="dot w-4 h-4 rounded-full bg-[#183154]"></button>
-    <button class="dot dot-mobile w-4 h-4 rounded-full bg-[#183154]"></button>
-    <button class="dot dot-mobile w-4 h-4 rounded-full bg-[#183154]"></button>
-    <button class="dot dot-mobile w-4 h-4 rounded-full bg-[#183154]"></button>
-    <button class="dot dot-mobile w-4 h-4 rounded-full bg-[#183154]"></button>
-  </div>
+    <section id="inscricao" class="bg-white py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+            <div class="flex justify-center">
+                <img src="./images/icons/inscreva_se.svg" class="bi bi-pencil-square text-[#183154] text-5xl">
+            </div>
+            <h2 class="font-grotesk text-[#183154] my-6 font-bold text-3xl md:text-5xl">
+                Inscreva-se já e junte-se a nós!
+            </h2>
+            <p class="text-[#404040] text-lg w-full md:w-[75%] mx-auto">
+                Prometemos não utilizar suas informações de contato para enviar qualquer tipo de SPAM.
+            </p>
+            <div class="w-24 h-1 bg-[#A1A1A1] mx-auto mt-6"></div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto">
+            <form id="inscricao-form" class="space-y-6">
+                
+                <!-- Campos montados via jQuery -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 grid-dinamica"></div>
+
+                <!-- resto do form permanece igual -->
+                <div class="flex items-start space-x-3">
+                <input 
+                    type="checkbox" 
+                    id="comunicacoes" 
+                    name="comunicacoes"
+                    class="mt-1 h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300 rounded"
+                >
+                <label for="comunicacoes" class="text-sm text-gray-700">
+                    Concordo em receber comunicações.
+                </label>
+                </div>
+
+                <div class="pt-6">
+                <button 
+                    type="submit" 
+                    class="w-full bg-[#EF7D00] hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg"
+                >
+                    Inscreva-se
+                </button>
+                </div>
+
+                <div class="text-center pt-4">
+                <p class="text-sm text-gray-600">
+                    Ao se inscrever, você concorda com nossa política de privacidade e termos de uso.
+                </p>
+                </div>
+            </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="localizacao py-16 px-6">
+        <div class="flex justify-center mb-4">
+            <img src="./images/icons/local_evento.svg" class="w-14 h-14">
+        </div>
+        <h2 class="font-grotesk text-white font-bold text-3xl md:text-5xl text-center">Localização do Evento</h2>
+        <p class="text-white text-lg mt-6 text-center">Encontre-nos no coração de São Paulo, em um local de fácil acesso</p>
+        <div class="w-24 h-1 bg-[#A1A1A1] mx-auto mt-6"></div>
+
+        <div class="container-localizacao">
+            <div class="card">
+                <h3 class="font-bold">MILENIUM Centro de Convenções</h3>
+
+                <div class="info">
+                    <img src="./images/icons/local_evento.svg" alt="">
+                    <div class="text-lg font-card">
+                        <p class="pb-2">Endereço</p>
+                        <span>R. Dr. Bacelar, 1043 - Vila Clementino</span>
+                        <span>São Paulo - SP | CEP 04026-002</span>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <img class="w-16 h-16" src="./images/icons/horario.svg" alt="">
+                    <div class="text-lg font-card">
+                        <p class="pb-2">Horário</p>
+                        <span>27 de novembro de 2025</span><br>
+                        <span>A partir das 14h</span>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <img class="w-16 h-16" src="./images/icons/como_chegar.svg" alt="">
+                    <div class="text-lg font-card">
+                        <p class="pb-2">Como chegar</p>
+                        <span>Metrô Santa Cruz-Vila Lobos (5 min a pé)</span>
+                        <span>Estacionamento disponível no local</span>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/maps/place/R.+Dr.+Bacelar,+1043+-+Vila+Clementino,+S%C3%A3o+Paulo+-+SP,+04026-002/@-23.6036308,-46.6482289,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5a3c5aa26045:0xa7379805f68f3bac!8m2!3d-23.6036308!4d-46.6482289!16s%2Fg%2F11b8vc35ks?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn">
+                <img class="w-5 h-5" src="./images/icons/seta_google.svg" alt="Seta navegação google"> Ver no Google Maps
+                </a>
+            </div>
+
+            <div class="map">
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.301660497032!2d-46.63955758538454!3d-23.597122868263446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c42b2f9c3d%3A0x54db5c7c91fda07c!2sR.%20Dr.%20Bacelar%2C%201043%20-%20Vila%20Clementino%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004026-002!5e0!3m2!1spt-BR!2sbr!4v1690310800000!5m2!1spt-BR!2sbr" 
+                allowfullscreen="" 
+                loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Cards de baixo -->
+        <div class="features container-localizacao">
+        <div class="feature-card">
+            <h4 class="mb-2 text-[#EF7D00] text-2xl font-bold">Gratuito</h4>
+            <p>Entrada totalmente gratuita</p>
+        </div>
+        <div class="feature-card">
+            <h4 class="mb-2 text-[#EF7D00] text-2xl font-bold">4 horas</h4>
+            <p>De conteúdo intensivo</p>
+        </div>
+        <div class="feature-card">
+            <h4 class="mb-2 text-[#EF7D00] text-2xl font-bold">Networking</h4>
+            <p>Coquetel de confraternização</p>
+        </div>
+        </div>
+    </section>
+
+    <section id="patrocinadores" class="bg-[#E6E6E6] pt-16 pb-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+            <div class="flex justify-center mb-4">
+                <div class="flex justify-center">
+                <img src="./images/icons/patrocinadores.svg" alt="Ícone cidade" class="w-14 h-14">
+                </div>
+            </div>
+            <h1 class="font-grotesk text-[#183154] font-bold text-3xl md:text-5xl">
+                Nossos Patrocinadores
+            </h1>
+            <p class="text-[#404040] text-lg max-w-xl mx-auto my-6">
+                Empresas líderes que apoiam o desenvolvimento do setor de Segurança Eletrônica
+            </p>
+            <div class="w-24 h-1 bg-[#A1A1AA] mx-auto"></div>
+            </div>
+
+            <!-- Container para os cards -->
+            <div id="sponsorsContainer" class="grid-patrocinador grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8"></div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+            <div class="flex justify-center mb-4">
+                <img src="./images/icons/perguntas.svg" alt="Ícone perguntas frequentes" class="w-14 h-14">
+            </div>
+            <h2 class="font-grotesk text-[#183154] font-bold text-3xl md:text-5xl">
+                Perguntas Frequentes
+            </h2>
+            <p class="text-[#404040] text-lg my-6">Tire suas dúvidas sobre o Congresso ABESE 2025</p>
+            <div class="w-24 h-1 bg-[#A1A1AA] mx-auto"></div>
+            </div>
+
+            <!-- container dos itens FAQ -->
+            <div id="faqContainer" class="space-y-4"></div>
+
+            <div class="inscrevaseFaq text-center mt-16">
+            <a href="#inscricao" class="bg-[#EF7D00] hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition">
+                Inscreva-se Gratuitamente
+            </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-blue-900 bg-opacity-95 backdrop-blur-sm z-50 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#hero" class="text-white text-2xl hover:text-orange-400 transition-colors">Início</a>
+            <a href="#pqParticipar" class="text-white text-2xl hover:text-orange-400 transition-colors">Programa</a>
+            <a href="#patrocinadores" class="text-white text-2xl hover:text-orange-400 transition-colors">Patrocinadores</a>
+            <button class="bg-[#EF7D00] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                Inscreva-se gratuitamente
+            </button>
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/hero.js"></script>
+    <script src="./js/depoimentos.js"></script>
+    <script src="./js/carouselMobile.js"></script>
+    <script src="./js/inscricao.js"></script>
+    <script src="./js/palestrantes.js"></script>
+    <script src="./js/patrocinadores.js"></script>
+    <script src="./js/pqParticipar.js"></script>
+    <script src="./js/localizacao.js"></script>
+    <script src="./js/faq.js"></script>
+    <script src="./js/historia.js"></script>
+    <script src="./js/programacao.js"></script>
+
+</body>
+</html>
+

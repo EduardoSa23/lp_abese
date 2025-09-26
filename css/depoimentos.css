@@ -16,7 +16,7 @@ section.depoimentos {
     border-radius: 1rem;
     padding: 2rem;
     height: 600px;
-    width: 35%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,5 +81,9 @@ section.depoimentos {
 @media (max-width: 768px) {
   section.depoimentos {
     display: none;
+  }
+
+  .card-depoimentos {
+    width: 35%;
   }
 }
