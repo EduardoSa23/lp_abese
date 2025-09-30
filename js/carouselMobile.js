@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (index < 0) index = 0;
     if (index > maxIndex) index = maxIndex;
 
-    track.style.transform = `translateX(-${index * 99}%)`;
+    track.style.transform = `translateX(-${index * 97}%)`;
 
     dots.forEach((dot, i) => {
       dot.classList.toggle("bg-[#EF7D00]", i === index);
