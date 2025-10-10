@@ -2,9 +2,17 @@ $(document).ready(function () {
   const cardsProgramacao = [
     { icon: "./images/icons/pessoas_branco.svg", title: "13h30", subtitulo: "Início do Credenciamento", description: "Recepção dos participantes e entrega de materiais" },
     { icon: "./images/icons/lampada_branca.svg", title: "14h00", subtitulo: "Abertura do Evento", description: "Apresentação oficial do Congresso ABESE 2025" },
-    { icon: "./images/icons/cidade_branca.svg", title: "14h40", subtitulo: "Painel 1 - Tríplice Aliança Academia, Governo e Mercado", description: "Discussão sobre a interação entre setor público e privado na segurança eletrônica" },
+    { icon: "./images/icons/cidade_branca.svg", title: "14h40", subtitulo: "Painel 1: Tríplice Aliança: Governo, Mercado e Universidade da Segurança do Futuro", 
+       description: `
+        <ul class="list-disc list-inside text-left space-y-1 text-[#404040]">
+          <li>Estatuto da Segurança Privada</li>
+          <li>Segurança Colaborativa</li>
+          <li>A interferência do poder público na iniciativa privada - Portaria Remota e Reforma Tributária</li>
+        </ul>
+      `
+    },
     { icon: "./images/icons/wifi_branco.svg", title: "15h40", subtitulo: "Painel 2 - Revolução 5.0 IA, Dados e Cibersegurança", description: "As mais recentes inovações tecnológicas transformando o setor" },
-    { icon: "./images/icons/seguranca_branco.svg", title: "16h40", subtitulo: "Segurança Personalizada Atendendo as Expectativas dos Novos Mercados", description: "Explorando verticais e oportunidades emergentes no mercado" },
+    { icon: "./images/icons/seguranca_branco.svg", title: "16h40", subtitulo: "Keynote Speaker", description: "" },
     { icon: "./images/icons/pessoas_branco.svg", title: "17h40", subtitulo: "Encerramento", description: "Considerações finais e próximos passos" },
     { icon: "./images/icons/xicara_branco.svg", title: "18h00", subtitulo: "Coquetel", description: "Networking e confraternização entre os participantes" }
   ];
@@ -42,7 +50,7 @@ $(document).ready(function () {
           </div>
         </div>
         <div class="pl-0 md:pl-4">
-          <div class="flex items-end gap-8">
+          <div class="flex items-start gap-8 md:w-[80%] w-full">
             <p class="font-bold text-2xl text-[#183154]">${card.title}</p>
             <p class="font-bold text-lg text-[#183154]">${card.subtitulo}</p>
           </div>

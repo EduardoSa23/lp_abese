@@ -1,40 +1,22 @@
 $(document).ready(function() {
      const palestrantes = [
         {
-        nome: "Palestrante 1",
-        titulo: "Especialista em Segurança",
-        descricao: "Informações em breve",
-        foto: "./images/palestrantes/palestrante1.jpg", // pode usar img em vez de SVG
+        nome: "Selma Migliori",
+        titulo: "Painel 1",
+        descricao: "Selma Migliori é presidente da ABESE – Associação Brasileira das Empresas de Sistemas Eletrônicos de Segurança. Tem formação em Engenheira Eletrônica pela Escola de Engenharia Mauá do Instituto Mauá de Tecnologia - IMT. Possui diversos cursos em gestão empresarial, segurança eletrônica, elaboração de projetos técnicos de segurança, entre outros.",
+        foto: "./images/depoimentos/selma_migliore.png", // pode usar img em vez de SVG
         },
         {
-        nome: "Palestrante 2",
-        titulo: "Especialista em Segurança",
-        descricao: "Informações em breve",
-        foto: "./images/palestrantes/palestrante2.jpg",
+        nome: "Jerry Antunes",
+        titulo: "Painel 1",
+        descricao: "Jerry é Delegado de Polícia Federal desde 1997, com uma carreira marcada por atuações estratégicas no combate a crimes fazendários, previdenciários e instalação de núcleos de combate a entorpecentes e crimes postais. Ocupou posições de destaque como Superintendente da PF em Minas Gerais e Adido Policial na Embaixada do Brasil na Espanha. Em 2021, foi cedido ao Ministério da Justiça e Segurança Pública como Diretor de Operações, coordenando a integração das forças de segurança federais, estaduais e municipais até janeiro de 2022. Após sua aposentadoria do serviço público em fevereiro de 2022, ingressou no Banco Santander Brasil, onde atualmente gerencia a Superintendência de Pessoas, Patrimônio e Negócios, com abrangência nacional. Além disso, é o atual Diretor Setorial de Segurança Bancária da FEBRABAN, aplicando sua vasta experiência em segurança pública ao setor corporativo e bancário brasileiro.",
+        foto: "./images/depoimentos/jerry_antunes.png",
         },
         {
-        nome: "Palestrante 3",
-        titulo: "Especialista em Segurança",
-        descricao: "Informações em breve",
-        foto: "./images/palestrantes/palestrante3.jpg",
-        },
-        {
-        nome: "Palestrante 4",
-        titulo: "Especialista em Segurança",
-        descricao: "Informações em breve",
-        foto: "./images/palestrantes/palestrante4.jpg",
-        },
-        {
-        nome: "Palestrante 5",
-        titulo: "Especialista em Segurança",
-        descricao: "Informações em breve",
-        foto: "./images/palestrantes/palestrante5.jpg",
-        },
-        {
-        nome: "Palestrante 6",
-        titulo: "Especialista em Segurança",
-        descricao: "Informações em breve",
-        foto: "./images/palestrantes/palestrante6.jpg",
+        nome: "Caique Paes de Barros",
+        titulo: "Painel 1",
+        descricao: "Líder de iniciativas que conectam Agricultura e Tecnologia para gerar impacto social alto no campo, está à frente do FazMais, movimento que apoia produtores agrícolas e suas associações, sindicatos, cooperativas e comunidades rurais, promovendo práticas mais sustentáveis (econômicas, sociais e ambientais) com uso de tecnologias conectadas. Foi Coordenador-Geral da ConectarAGRO, entidade com o propósito da expansão da conectividade rural, quando colaborou com a criação de ferramentas como a calculadora de benefícios e o Indicador de Conectividade Rural (ICR), referência para políticas públicas. Atuou na Secretaria de Agricultura e Abastecimentodo Estado de São Paulo SP na coordenação intersecretarial que originou o programa Rotas Rurais, de grande impacto na prestação de serviços públicos às comunidades rurais como segurança, saúde e educação. ",
+        foto: "./images/depoimentos/caique_paes.png",
         },
     ];
 

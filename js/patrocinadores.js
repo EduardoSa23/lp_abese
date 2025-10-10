@@ -1,10 +1,10 @@
 $(document).ready(function () {
   const patrocinadores = [
-    { img: "./images/logos/logo_exposec.png", texto: "Logo Exposec"},
-    { img: "./images/logos/logo_fulltime.png", texto: "Logo Fulltime"},
-    { img: "./images/logos/logo_getrak.png", texto: "Logo Getrak"},
-    { img: "./images/logos/logo_ifaseg.png", texto: "Logo Ifaseg"},
     { img: "./images/logos/logo_johnsoncontrols.png", texto: "Logo Johnson Controls"},
+    { img: "./images/logos/logo_ifaseg.png", texto: "Logo Ifaseg"},
+    { img: "./images/logos/logo_getrak.png", texto:"logo Getrak"},
+    { img: "./images/logos/logo_fulltime.png", texto: "Logo Fulltime"},
+    { img: "./images/logos/logo_exposec.png", texto: "Logo Exposec"},
   ];
 
    const $container = $("#sponsorsContainer");
@@ -22,12 +22,12 @@ $(document).ready(function () {
   });
 
   const patrocinadoresInferior = [
-    { img: "./images/logos/logo_moninf.png", texto: "Logo Moninf"},
+    { img: "./images/logos/logo_virtueyes.png", texto: "Logo Virtueyes"},
     { img: "./images/logos/logo_ppa.png", texto: "Logo PPA"},
     { img: "./images/logos/logo_segware.png", texto: "Logo Segware"},
     { img: "./images/logos/logo_netti.png", texto: "Logo Netti"},
     { img: "./images/logos/logo_x3tech.png", texto: "Logo X3Tech"},
-    { img: "./images/logos/logo_virtueyes.png", texto: "Logo Virtueyes"},
+    { img: "./images/logos/logo_moninf.png", texto: "Logo Moninf"},
   ]
  
    const $containerInferior = $("#sponsorsContainerInferior");
