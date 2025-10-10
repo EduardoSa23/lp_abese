@@ -50,9 +50,9 @@ $(document).ready(function () {
           </div>
         </div>
         <div class="pl-0 md:pl-4">
-          <div class="flex items-start gap-8 md:w-[80%] w-full">
+          <div class="flex items-start gap-8">
             <p class="font-bold text-2xl text-[#183154]">${card.title}</p>
-            <p class="font-bold text-lg text-[#183154]">${card.subtitulo}</p>
+            <p class="font-bold text-lg text-[#183154] md:w-[85%] w-full">${card.subtitulo}</p>
           </div>
           <p class="text-[#666666]">${card.description}</p>
         </div>
