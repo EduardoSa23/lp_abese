@@ -65,10 +65,9 @@
 
      .card-patrocinador {
         height: 190px;
-        /* width: 50%; */ /* Remova esta linha */
         min-width: 0;
     }
-    .grid-patrocinador {
+    .grid-patrocinador, .grid-patrocinador-ouro {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
